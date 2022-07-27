@@ -1,0 +1,39 @@
+﻿@model Weapons.Models.Протоколы_контрольного_отстрела
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    <h4>Протоколы_контрольного_отстрела</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Номер_лицензии_на_приобретение_оружия)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Номер_лицензии_на_приобретение_оружия)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Номер_воинской_части_или_наименование_организации)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Номер_воинской_части_или_наименование_организации)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Дата_и_время_отстрела)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Дата_и_время_отстрела)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Номер_протокола_контрольного_отстрела" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад</a>
+    </form>
+</div>

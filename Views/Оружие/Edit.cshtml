@@ -1,0 +1,54 @@
+﻿@model Weapons.Models.Оружие
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить</h1>
+
+<h4>Оружие</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Номер_лицензии_на_приобретение_оружия" />
+            <div class="form-group">
+                <label asp-for="Серийный_номер" class="control-label"></label>
+                <input asp-for="Серийный_номер" class="form-control" />
+                <span asp-validation-for="Серийный_номер" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Код_модели" class="control-label"></label>
+                <input asp-for="Код_модели" class="form-control" />
+                <span asp-validation-for="Код_модели" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Серия" class="control-label"></label>
+                <input asp-for="Серия" class="form-control" />
+                <span asp-validation-for="Серия" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Год_выпуска" class="control-label"></label>
+                <input asp-for="Год_выпуска" class="form-control" />
+                <span asp-validation-for="Год_выпуска" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Код_производителя" class="control-label"></label>
+                <input asp-for="Код_производителя" class="form-control" />
+                <span asp-validation-for="Код_производителя" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

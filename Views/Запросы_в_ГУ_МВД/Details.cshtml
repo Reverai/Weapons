@@ -1,0 +1,36 @@
+﻿@model Weapons.Models.Запросы_в_ГУ_МВД
+
+@{
+    ViewData["Title"] = "Детали";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>Запросы_в_ГУ_МВД</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Дата_запроса)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Дата_запроса)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Номер_отчёта)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Номер_отчёта)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID_гражданина)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID_гражданина)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Номер_запроса_в_ГУ_МВД">Изменить</a> |
+    <a asp-action="Index">Назад</a>
+</div>

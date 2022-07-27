@@ -1,0 +1,88 @@
+﻿@model Weapons.Models.Граждане
+
+@{
+    ViewData["Title"] = "Создать";
+}
+
+<h1>Создать</h1>
+
+<h4>Граждане</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Фамилия" class="control-label"></label>
+                <input asp-for="Фамилия" class="form-control" />
+                <span asp-validation-for="Фамилия" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Имя" class="control-label"></label>
+                <input asp-for="Имя" class="form-control" />
+                <span asp-validation-for="Имя" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Отчество" class="control-label"></label>
+                <input asp-for="Отчество" class="form-control" />
+                <span asp-validation-for="Отчество" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Адрес_фактического_проживания" class="control-label"></label>
+                <input asp-for="Адрес_фактического_проживания" class="form-control" />
+                <span asp-validation-for="Адрес_фактического_проживания" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Дата_рождения" class="control-label"></label>
+                <input asp-for="Дата_рождения" class="form-control" />
+                <span asp-validation-for="Дата_рождения" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Серия_паспорта" class="control-label"></label>
+                <input asp-for="Серия_паспорта" class="form-control" />
+                <span asp-validation-for="Серия_паспорта" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Номер_паспорта" class="control-label"></label>
+                <input asp-for="Номер_паспорта" class="form-control" />
+                <span asp-validation-for="Номер_паспорта" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Дата_выдачи_паспорта" class="control-label"></label>
+                <input asp-for="Дата_выдачи_паспорта" class="form-control" />
+                <span asp-validation-for="Дата_выдачи_паспорта" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Кем_выдан_паспорт" class="control-label"></label>
+                <input asp-for="Кем_выдан_паспорт" class="form-control" />
+                <span asp-validation-for="Кем_выдан_паспорт" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Номер_телефона" class="control-label"></label>
+                <input asp-for="Номер_телефона" class="form-control" />
+                <span asp-validation-for="Номер_телефона" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Номер_СНИЛС" class="control-label"></label>
+                <input asp-for="Номер_СНИЛС" class="form-control" />
+                <span asp-validation-for="Номер_СНИЛС" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,24 @@
+﻿@model Weapons.Models.Города
+
+@{
+    ViewData["Title"] = "Детали";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>Города</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Область)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Область)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Город">Изменить</a> |
+    <a asp-action="Index">Назад</a>
+</div>

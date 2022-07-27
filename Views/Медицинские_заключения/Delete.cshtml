@@ -1,0 +1,69 @@
+﻿@model Weapons.Models.Медицинские_заключения
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    <h4>Медицинские_заключения</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID_гражданина)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID_гражданина)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Наличие_противопоказаний_к_владению_оружием)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Наличие_противопоказаний_к_владению_оружием)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Фамилия_врача)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Фамилия_врача)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Имя_врача)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Имя_врача)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Отчество_врача)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Отчество_врача)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Дата_заключения)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Дата_заключения)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Срок_истечения)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Срок_истечения)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID_организации)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID_организации)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Номер_медицинского_заключения" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад</a>
+    </form>
+</div>

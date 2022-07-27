@@ -1,0 +1,69 @@
+﻿@model Weapons.Models.Медицинские_заключения
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить</h1>
+
+<h4>Медицинские_заключения</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Номер_медицинского_заключения" />
+            <div class="form-group">
+                <label asp-for="ID_гражданина" class="control-label"></label>
+                <input asp-for="ID_гражданина" class="form-control" />
+                <span asp-validation-for="ID_гражданина" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Наличие_противопоказаний_к_владению_оружием" class="control-label"></label>
+                <input asp-for="Наличие_противопоказаний_к_владению_оружием" class="form-control" />
+                <span asp-validation-for="Наличие_противопоказаний_к_владению_оружием" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Фамилия_врача" class="control-label"></label>
+                <input asp-for="Фамилия_врача" class="form-control" />
+                <span asp-validation-for="Фамилия_врача" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Имя_врача" class="control-label"></label>
+                <input asp-for="Имя_врача" class="form-control" />
+                <span asp-validation-for="Имя_врача" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Отчество_врача" class="control-label"></label>
+                <input asp-for="Отчество_врача" class="form-control" />
+                <span asp-validation-for="Отчество_врача" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Дата_заключения" class="control-label"></label>
+                <input asp-for="Дата_заключения" class="form-control" />
+                <span asp-validation-for="Дата_заключения" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Срок_истечения" class="control-label"></label>
+                <input asp-for="Срок_истечения" class="form-control" />
+                <span asp-validation-for="Срок_истечения" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_организации" class="control-label"></label>
+                <input asp-for="ID_организации" class="form-control" />
+                <span asp-validation-for="ID_организации" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

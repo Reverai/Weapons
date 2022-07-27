@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Weapons.Models.Производители>
+
+@{
+    ViewData["Title"] = "Производители";
+}
+
+<h1>Производители</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Код_производителя)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Наименование_производителя)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Код_производителя)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Наименование_производителя)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Код_производителя">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Код_производителя">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Код_производителя">Удалить</a>
+                </td>
+            </tr>
+        }
+        <a class="nav-link text-dark" asp-area="" asp-controller="Оружие" asp-action="Index">Оружие(подчинённая)</a>
+    </tbody>
+</table>

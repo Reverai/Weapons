@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Weapons.Models.Города>
+
+@{
+    ViewData["Title"] = "Города";
+}
+
+<h1>Города</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Код_города)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Город)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Область)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Код_города)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Город)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Область)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Город">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Город">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Город">Удалить</a>
+                </td>
+            </tr>
+        }
+    <a class="nav-link text-dark" asp-area="" asp-controller="Места_хранения_оружия" asp-action="Index">Места_хранения_оружия(подчинённая)</a>
+    </tbody>
+</table>

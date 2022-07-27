@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Weapons.Models.Граждане>
+
+@{
+    ViewData["Title"] = "Граждане";
+}
+
+<h1>Граждане</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<form asp-controller="Граждане" asp-action="Index">
+    <p>
+        Поиск: <input type="text" name="searchString">
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IDSortParm"]">@Html.DisplayNameFor(model => model.ID_гражданина)</a>
+            </th>*@
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["SurNameSortParm"]">@Html.DisplayNameFor(model => model.Фамилия)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Имя)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Отчество)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Адрес_фактического_проживания)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Дата_рождения)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Серия_паспорта)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Номер_паспорта)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Дата_выдачи_паспорта)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Кем_выдан_паспорт)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Номер_телефона)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Номер_СНИЛС)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               @* <td>
+                    @Html.DisplayFor(modelItem => item.ID_гражданина)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Фамилия)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Имя)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Отчество)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Адрес_фактического_проживания)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Дата_рождения)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Серия_паспорта)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Номер_паспорта)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Дата_выдачи_паспорта)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Кем_выдан_паспорт)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Номер_телефона)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Номер_СНИЛС)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID_гражданина">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID_гражданина">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID_гражданина">Удалить</a>
+                </td>
+            </tr>
+        }
+        <a class="nav-link text-dark" asp-area="" asp-controller="Адреса_регистрации" asp-action="Index">Адреса_регистрации(подчинённая)</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Заявления" asp-action="Index">Заявления(подчинённая)</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Запросы_в_ГУ_МВД" asp-action="Index">Запросы_в_ГУ_МВД(подчинённая)</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Медицинские_заключения" asp-action="Index">Медицинские_заключения(подчинённая)</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Лицензии_на_приобретение_оружия" asp-action="Index">Лицензии_на_приобретение_оружия(подчинённая)</a>
+    </tbody>
+</table>

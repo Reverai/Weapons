@@ -1,0 +1,53 @@
+﻿@model Weapons.Models.Места_хранения_оружия
+
+@{
+    ViewData["Title"] = "Создать";
+}
+
+<h1>Создать</h1>
+
+<h4>Места_хранения_оружия</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Район" class="control-label"></label>
+                <input asp-for="Район" class="form-control" />
+                <span asp-validation-for="Район" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Дом" class="control-label"></label>
+                <input asp-for="Дом" class="form-control" />
+                <span asp-validation-for="Дом" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Улица" class="control-label"></label>
+                <input asp-for="Улица" class="form-control" />
+                <span asp-validation-for="Улица" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Квартира" class="control-label"></label>
+                <input asp-for="Квартира" class="form-control" />
+                <span asp-validation-for="Квартира" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Код_города" class="control-label"></label>
+                <input asp-for="Код_города" class="form-control" />
+                <span asp-validation-for="Код_города" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Weapons.Models.Места_хранения_оружия>
+
+@{
+    ViewData["Title"] = "Места хранения";
+}
+
+<h1>Места хранения</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_места_хранения)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Район)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Дом)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Улица)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Квартира)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Код_города)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_места_хранения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Район)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дом)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Улица)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Квартира)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Код_города)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID_места_хранения">Изменить</a> |
+                <a asp-action="Details" asp-route-id="@item.ID_места_хранения">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID_места_хранения">Удалить</a>
+            </td>
+        </tr>
+        }
+        <a class="nav-link text-dark" asp-area="" asp-controller="Оружие" asp-action="Index">Оружие(главная)</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Города" asp-action="Index">Города(подчинённая)</a>
+    </tbody>
+</table>

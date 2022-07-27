@@ -1,0 +1,39 @@
+﻿@model Weapons.Models.Модели
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    <h4>Модели</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Модель)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Модель)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Калибр)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Калибр)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Тип)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Тип)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Код_модели" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад</a>
+    </form>
+</div>

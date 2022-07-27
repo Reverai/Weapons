@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Weapons.Models.Протоколы_контрольного_отстрела>
+
+@{
+    ViewData["Title"] = "Протоколы контрольного отстрела";
+}
+
+<h1>Протоколы контрольного отстрела</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Номер_лицензии_на_приобретение_оружия)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Номер_воинской_части_или_наименование_организации)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Дата_и_время_отстрела)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Номер_лицензии_на_приобретение_оружия)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Номер_воинской_части_или_наименование_организации)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Дата_и_время_отстрела)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Номер_протокола_контрольного_отстрела">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Номер_протокола_контрольного_отстрела">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Номер_протокола_контрольного_отстрела">Удалить</a>
+                </td>
+            </tr>
+        }
+        <a class="nav-link text-dark" asp-area="" asp-controller="Оружие" asp-action="Index">Оружие(Главная)</a>
+    </tbody>
+</table>

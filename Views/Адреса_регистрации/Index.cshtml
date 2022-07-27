@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Weapons.Models.Адреса_регистрации>
+
+@{
+    ViewData["Title"] = "Адреса регистрации";
+}
+
+<h1>Адреса регистрации</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<form asp-controller="Адреса_регистрации" asp-action="Index">
+    <p>
+        Поиск по ID гражданина: <input type="text" name="searchString">
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr><th>
+                @Html.DisplayNameFor(model => model.Код_адреса)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Адрес)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IDSortParm"]">@Html.DisplayNameFor(model => model.ID_гражданина)</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Код_адреса)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Адрес)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_гражданина)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Код_адреса">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Код_адреса">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Код_адреса">Удалить</a>
+                </td>
+            </tr>
+        }
+        <a class="nav-link text-dark" asp-area="" asp-controller="Граждане" asp-action="Index">Граждане(Главная)</a>
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Weapons.Models.Заявления>
+
+@{
+    ViewData["Title"] = "Заявления";
+}
+
+<h1>Заявления</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<form asp-controller="Заявления" asp-action="Index">
+    <p>
+        Поиск по ID гражданина: <input type="text" name="searchString">
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Цель_приобретения_оружия)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_гражданина)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Фото)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Цель_приобретения_оружия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_гражданина)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фото)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Номер_заявления">Изменить</a> |
+                <a asp-action="Details" asp-route-id="@item.Номер_заявления">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.Номер_заявления">Удалить</a>
+            </td>
+        </tr>
+}       <a class="nav-link text-dark" asp-area="" asp-controller="Граждане" asp-action="Index">Граждане(главная)</a>
+    </tbody>
+</table>

@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Weapons.Models.Медицинские_заключения>
+
+@{
+    ViewData["Title"] = "Медицинские заключения";
+}
+
+<h1>Медицинские заключения</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<form asp-controller="Медицинские_заключения" asp-action="Index">
+    <p>
+        Поиск по ID гражданина: <input type="text" name="searchString">
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IDSortParm"]">@Html.DisplayNameFor(model => model.ID_гражданина)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Наличие_противопоказаний_к_владению_оружием)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["SurNameSortParm"]">@Html.DisplayNameFor(model=> model.Фамилия_врача)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Имя_врача)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Отчество_врача)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DataSortParm"]">@Html.DisplayNameFor(model => model.Дата_заключения)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Срок_истечения)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_организации)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_гражданина)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Наличие_противопоказаний_к_владению_оружием)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Фамилия_врача)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Имя_врача)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Отчество_врача)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Дата_заключения)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Срок_истечения)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_организации)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Номер_медицинского_заключения">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Номер_медицинского_заключения">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Номер_медицинского_заключения">Удалить</a>
+                </td>
+            </tr>
+        }
+    <a class="nav-link text-dark" asp-area="" asp-controller="Граждане" asp-action="Index">"Граждане(главная)</a>
+    <a class="nav-link text-dark" asp-area="" asp-controller="Медицинские_организации" asp-action="Index">"Медицинские_организации(главная)</a>
+    </tbody>
+</table>

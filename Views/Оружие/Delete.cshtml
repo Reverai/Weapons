@@ -1,0 +1,51 @@
+﻿@model Weapons.Models.Оружие
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    <h4>Оружие</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Серийный_номер)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Серийный_номер)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Код_модели)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Код_модели)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Серия)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Серия)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Год_выпуска)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Год_выпуска)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Код_производителя)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Код_производителя)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Номер_лицензии_на_приобретение_оружия" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад</a>
+    </form>
+</div>

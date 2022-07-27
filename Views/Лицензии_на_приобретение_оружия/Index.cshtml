@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Weapons.Models.Лицензии_на_приобретение_оружия>
+
+@{
+    ViewData["Title"] = "Лицензии на приобретение оружия";
+}
+
+<h1>Лицензии на приобретение оружия</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<form asp-controller="Лицензии_на_приобретение_оружия" asp-action="Index">
+    <p>
+        Поиск по ID гражданина: <input type="text" name="searchString">
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Номер_лицензии_на_приобретение_оружия)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["IDSortParm"]">@Html.DisplayNameFor(model => model.ID_гражданина)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Наименование_организации)
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["Data1SortParm"]">@Html.DisplayNameFor(model => model.Дата_выдачи)</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["Data2SortParm"]">@Html.DisplayNameFor(model => model.Дата_истечения)</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["Data3SortParm"]">@Html.DisplayNameFor(model => model.Дата_приобретения)</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_лицензии_на_приобретение_оружия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_гражданина)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование_организации)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_выдачи)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_истечения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_приобретения)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Номер_лицензии_на_приобретение_оружия">Изменить</a> |
+                <a asp-action="Details" asp-route-id="@item.Номер_лицензии_на_приобретение_оружия">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.Номер_лицензии_на_приобретение_оружия">Удалить</a>
+            </td>
+        </tr>
+        }
+    <a class="nav-link text-dark" asp-area="" asp-controller="Граждане" asp-action="Index">Граждане(главная)</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Оружие" asp-action="Index">Оружие(подчинённая)</a>
+    </tbody>
+</table>

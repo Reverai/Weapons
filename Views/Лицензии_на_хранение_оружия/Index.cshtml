@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Weapons.Models.Лицензии_на_хранение_оружия>
+
+@{
+    ViewData["Title"] = "Лицензии_на_хранение_оружия";
+}
+
+<h1>Лицензии_на_хранение_оружия</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<form asp-controller="Лицензии_на_хранение_оружия" asp-action="Index">
+    <p>
+        Поиск по ID гражданина: <input type="text" name="searchString">
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Номер_лицензии_на_приобретение_оружия)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Дата_выдачи)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Дата_окончания)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Где_выдано)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Кем_выдано)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ID_места_хранения)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Номер_лицензии_на_приобретение_оружия)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Дата_выдачи)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Дата_окончания)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Где_выдано)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Кем_выдано)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID_места_хранения)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Номер_лицензии">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Номер_лицензии">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Номер_лицензии">Удалить</a>
+                </td>
+            </tr>
+        }
+    <a class="nav-link text-dark" asp-area="" asp-controller="Оружие" asp-action="Index">Оружие(подчинённая)</a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Места_хранения_оружия" asp-action="Index">Места_хранения_оружия(подчинённая)</a>
+    </tbody>
+</table>

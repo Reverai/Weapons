@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Weapons.Models.Модели>
+
+@{
+    ViewData["Title"] = "Модели";
+}
+
+<h1>Модели</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Код_модели)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Модель)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Калибр)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Тип)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Код_модели)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Модель)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Калибр)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Тип)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Код_модели">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Код_модели">Детали</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Код_модели">Удалить</a>
+                </td>
+            </tr>
+        }
+        <a class="nav-link text-dark" asp-area="" asp-controller="Оружие" asp-action="Index">Оружие(подчинённая)</a>
+    </tbody>
+</table>

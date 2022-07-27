@@ -1,0 +1,43 @@
+﻿@model Weapons.Models.Протоколы_контрольного_отстрела
+
+@{
+    ViewData["Title"] = "Создать";
+}
+
+<h1>Создать</h1>
+
+<h4>Протоколы_контрольного_отстрела</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Номер_лицензии_на_приобретение_оружия" class="control-label"></label>
+                <input asp-for="Номер_лицензии_на_приобретение_оружия" class="form-control" />
+                <span asp-validation-for="Номер_лицензии_на_приобретение_оружия" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Номер_воинской_части_или_наименование_организации" class="control-label"></label>
+                <input asp-for="Номер_воинской_части_или_наименование_организации" class="form-control" />
+                <span asp-validation-for="Номер_воинской_части_или_наименование_организации" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Дата_и_время_отстрела" class="control-label"></label>
+                <input asp-for="Дата_и_время_отстрела" class="form-control" />
+                <span asp-validation-for="Дата_и_время_отстрела" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
